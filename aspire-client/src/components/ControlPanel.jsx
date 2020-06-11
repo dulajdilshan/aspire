@@ -32,15 +32,15 @@ const StopButton = withStyles((theme) => ({
     },
 }))(Button);
 
-export default function ControlPanel() {
+export default function ControlPanel(props) {
     const classes = useStyles();
 
         return (
             <div className="row">
-                <StartButton variant="contained" className={classes.style}>
+                <StartButton variant="contained" className={classes.style} onClick={() => props.startButtonOnClick()}>
                     Start
                 </StartButton>
-                <StopButton variant="contained" className={classes.style}>
+                <StopButton variant="contained" className={classes.style} onClick={() => props.stopButtonOnClick()}>
                     Stop
                 </StopButton>
             </div>
